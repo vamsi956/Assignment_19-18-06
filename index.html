@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MongoDB Query Reference</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f0f4f8;
+      margin: 0;
+      padding: 20px;
+    }
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+    .container {
+      max-width: 800px;
+      margin: 20px auto;
+      background-color: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    .query-block {
+      margin-bottom: 20px;
+    }
+    .query-block h3 {
+      margin: 0;
+      color: #1e90ff;
+    }
+    .code {
+      background-color: #f4f4f4;
+      border-left: 4px solid #1e90ff;
+      padding: 10px;
+      font-family: monospace;
+      white-space: pre-wrap;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>MongoDB Assignment</h1>
+
+  <div class="container">
+    
+    <div class="query-block">
+      <h3>1. How do you insert a single document into a
+
+MongoDB collection?</h3>
+      <div class="code">db.collection.insertOne({ name: "John", age: 30, deptno: 10 })</div>
+    </div>
+
+    <div class="query-block">
+      <h3>2. How do you insert multiple documents at once?</h3>
+      <div class="code">
+db.collection.insertMany([
+  { name: "Alice", age: 25, deptno: 10 },
+  { name: "Bob", age: 28, deptno: 20 }
+])
+      </div>
+    </div>
+
+    <div class="query-block">
+      <h3>3. How do you find all documents in a collection?</h3>
+      <div class="code">db.collection.find()</div>
+    </div>
+
+    <div class="query-block">
+      <h3>4. How do you find documents where a field equals a
+specific value?</h3>
+      <div class="code">db.collection.find({ name: "John" })</div>
+    </div>
+
+    <div class="query-block">
+      <h3>5. How do you find documents where a numeric field
+            is greater than a value?</h3>
+      <div class="code">db.collection.find({ age: { $gt: 30 } })</div>
+    </div>
+
+    <div class="query-block">
+      <h3>6. How do you find documents where a numeric field
+            is less than a value?</h3>
+      <div class="code">db.collection.find({ age: { $lt: 25 } })</div>
+    </div>
+
+    <div class="query-block">
+      <h3>7. How do you find documents with multiple conditions (AND)?</h3>
+      <div class="code">db.collection.find({ $and: [ { age: { $gt: 25 } }, { deptno: 10 } ] })
+</div>
+    </div>
+
+  </div>
+
+</body>
+</html>
